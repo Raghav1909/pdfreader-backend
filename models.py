@@ -10,3 +10,4 @@ class Book(Base):
     name: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
     author: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
     no_of_pages: Mapped[int] = mapped_column(nullable=True) 
+    pdf_path: Mapped[str] = mapped_column(nullable=True)
