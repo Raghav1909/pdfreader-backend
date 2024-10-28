@@ -50,20 +50,20 @@ This is the backend for the PDF Reader/Viewer application, built with FastAPI. I
    pip install -r requirements.txt
    ```
 
-## Initialize the Database
-
-Before starting the server, initialize the database:
-
-   ```bash
-   python init_script.py
-   ```
-
 ## Run the backend server
 
-1. Start the server using Uvicorn:
+Start the server using Uvicorn:
 
    ```bash
    fastapi dev
+   ```
+
+## Initialize the Database
+
+After starting the server, initialize the database:
+
+   ```bash
+   python init_script.py
    ```
 
 ## API Documentation
