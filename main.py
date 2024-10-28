@@ -56,7 +56,7 @@ def create_book(book: schemas.BookCreate, db: Session = Depends(get_db)):
 
     if book_db:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
+            status_code=status.HTTP_409_CONFLICT,
             detail=f"Books with name {book.name} already exists!",
         )
 
@@ -123,9 +123,7 @@ async def create_book_pdf(
     img_dir.mkdir(parents=True, exist_ok=True)
 
     try:
-        print(str(pdf_file_path))
         images = convert_from_path(str(pdf_file_path).replace("\\", "/"))
-        print("still working")
 
         # Save each page as a separate JPG image in the img_dir
         for idx, image in enumerate(images):
@@ -141,4 +139,3 @@ async def create_book_pdf(
     book_db.pdf_path = str(pdf_file_path)
     db.commit()
     db.refresh(book_db)
-
