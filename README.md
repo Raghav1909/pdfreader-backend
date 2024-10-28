@@ -60,7 +60,7 @@ Start the server using Uvicorn:
 
 ## Initialize the Database
 
-After starting the server, initialize the database:
+After starting the server, open a new terminal to initialize the database:
 
    ```bash
    python init_script.py
