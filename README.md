@@ -46,18 +46,24 @@ This is the backend for the PDF Reader/Viewer application, built with FastAPI. I
 
    > ⚠️ **Warning:** This requires **Poppler** to be installed first. Please refer to the [pdf2image documentation](https://pypi.org/project/pdf2image/) for installation instructions.
 
-    <br>
-  
-     ```bash
-     pip install -r requirements.txt
-     ```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Initialize the Database
+
+Before starting the server, initialize the database:
+
+   ```bash
+   python init_script.py
+   ```
 
 ## Run the backend server
 
 1. Start the server using Uvicorn:
 
    ```bash
-   uvicorn app.main:app --reload
+   fastapi dev
    ```
 
 ## API Documentation
